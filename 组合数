@@ -10,6 +10,13 @@ int fact(int x){
     }
 }
 
+int fun(int n, int m){
+    int ret;
+    //TODO
+    ret = fact(n)/(fact(m)*fact(n-m));
+    return ret;
+}
+
 /*
 //阶乘函数的测试函数就是我~
 int main(){
@@ -18,13 +25,6 @@ int main(){
     x = fac(x);
     cout << x;
 }*/
-
-int fun(int n, int m){
-    int ret;
-    //TODO
-    ret = fact(n)/(fact(m)*fact(n-m));
-    return ret;
-}
 
 int main(){
     double m, n;
