@@ -1,0 +1,45 @@
+#include <iostream>
+using namespace std;
+
+//阶乘函数
+int fact(int x){
+    int ret = 1;
+    if(x == 1||x==0){ return ret;}
+    else {
+        return x*fact(x-1);
+    }
+}
+
+/*
+//阶乘函数的测试函数就是我~
+int main(){
+    double x;
+    cin >> x;
+    x = fac(x);
+    cout << x;
+}*/
+
+int fun(int n, int m){
+    int ret;
+    //TODO
+    ret = fact(n)/(fact(m)*fact(n-m));
+    return ret;
+}
+
+int main(){
+    double m, n;
+    double Comb;
+    cout<<"Please input n :    ";
+    cin >> n;
+    cout<<"Please input m :    ";
+    cin >> m;
+    if(n<m){
+        cout<<"Error! n cannot be smaller than m!"<<endl;
+        return 0;
+    }
+    Comb = fun(n, m);
+    cout << "The result is: "<< Comb <<endl;
+
+    return 0;
+
+}
