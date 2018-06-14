@@ -36,14 +36,16 @@ void tran(string &s, vector<double> &vec){
             }
             num = 0;
         }
-        
     }
-    vec.push_back(num);
+        if(flag == 1){ vec.push_back(num); }
+        else{ 
+                vec.push_back((-1)*num);
+            }
 }
 //测试用的主函数
 int main(){
     vector<double> vec;
-    string s("-11,22,33,44,55");
+    string s("-11,22,33,44,-55");
     tran(s, vec);
     vector<double>::size_type size = vec.size();
     int i = 0;
