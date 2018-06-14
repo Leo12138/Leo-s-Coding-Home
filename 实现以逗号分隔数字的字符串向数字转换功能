@@ -5,13 +5,12 @@
 
 using namespace std;
 //space函数把所有逗号变成' '空格符
-string space(string &s){
+void space(string &s){
     for(auto &c : s){
         if(c == ','){
             c = ' ';
         }
     }
-    return s;
 }
 
 //tran函数把字符串s中的数字逐个导入到向量vec中
