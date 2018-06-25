@@ -1,0 +1,43 @@
+#include <iostream>
+#include <ctime>
+#include <cstdlib>
+using namespace std;
+void Probability(int *a, int &count, int total){
+		int i, j;
+		srand((unsigned)time(NULL));
+	for(i = 0; i < total; i++){
+		for(j = 0; j < 100; j++){
+		*(a+j) = rand()%2;
+	}
+		
+		for(j = 0; j < 100 - 4; j++){
+			//cout << a[j];
+			if(1==a[j]&&a[j]==a[j+1]&&a[j+1]==a[j+2]&&a[j+2]==a[j+3]&&a[j+3]==a[j+4]){
+			count ++;
+			break;
+			}
+		}
+	}
+} 
+
+
+int main(){
+	int a[100];
+	int i, j;
+	int k = 1;
+	int total = 0;
+	int count = 0;
+	cout << "PLease input the number of test groups: ";
+	cin >> total;
+	cout << "如果输入y，表示继续进行测试" << endl; 
+	while(k == 1){
+		string s;
+		Probability(a, count, total);	
+		cout<< "The probability is: " << (count+0.0)/total*100.0 << "%" << endl;
+		count = 0;
+		cin >> s;
+		if(s != "y"){
+			k = 0;
+		}
+	}
+}
